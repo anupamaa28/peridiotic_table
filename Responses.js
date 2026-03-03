@@ -18,7 +18,7 @@ function BotResponse(Input)
         index++
     }
   
-    return {answer : "gofcukurself!"}
+    return {answer : "ilyyyy<3"}
 
 }
 

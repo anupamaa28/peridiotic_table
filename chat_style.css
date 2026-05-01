@@ -14,7 +14,7 @@ h2 {
   top:1.5%;
   width: 65%;
   height:10%;
-  background-color:rgb(60, 20, 84);
+  background-color:var(--header-color);
   /* background-color: rgb(13, 15, 43); */
   color: white;
   text-align: center;
@@ -28,12 +28,21 @@ h2 {
   position: absolute;
   width: 65%;
   height: 87%;
-  /* background-color: rgb(28, 6, 40); */
   right: 15%;
   top: 11.5%;
-  /* margin: 20px; */
-  background-image: linear-gradient( rgb(51, 7, 60), rgb(2, 4, 40));
-  /* background-image : linear-gradient(rgb(0, 40, 53), rgb(6, 0, 58)) */
+  background-size: cover;
+  background-position: center;
+  z-index: 1
+}
+
+#bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* black overlay at 50% opacity */
+    z-index: 0;
 }
 
 #ChatContainer {
@@ -54,7 +63,7 @@ h2 {
   position: absolute;
   width: 100%;
   height: 10%;
-  background-color:rgb(60, 20, 84);
+  background-color:var(--header-color);
   /* background-color: rgb(13, 15, 43); */
 
   bottom: 0px;
@@ -87,7 +96,7 @@ h2 {
   bottom: 2%;
   width: 17%;
   height: 6%;
-  /* background-color: rgb(128, 72, 128); */
+  background-color: var(--bot-color);
   color: black;
   font-size: 120%;
   padding: 0.7%;
@@ -96,9 +105,15 @@ h2 {
 
 #question-button
 {
-  /* background-color: rgb(107, 73, 171); */
+  background-color: var(--user-color); 
   border-radius: 10px;
   font-size: medium;
+}
+
+:root {
+    --bot-color: rgb(131, 50, 88);
+    --user-color: rgb(118, 86, 141);
+    --header-color: rgb(76, 52, 104);
 }
 
 .BotMessage  {
@@ -113,26 +128,8 @@ h2 {
   word-wrap: inherit;
   float: left;
   margin: .5%;
+  background-color: var(--bot-color);
 
-}
-
-.UserBlueMessage {
-  background-color: rgb(78, 129, 135);
-}
-
-.BotBlueMessage
-{
-  background-color: rgb(99, 121, 165);
-
-}
-
-.UserPurpleMessage{
-  background-color: rgb(132, 97, 139);
-
-}
-
-.BotPurpleMessage {
-  background-color: rgb(167, 116, 177);
 }
 
 .UserMessage  
@@ -147,6 +144,7 @@ h2 {
   word-wrap: break-word;
   float: right;
   margin : 1%;
+  background-color: var(--user-color);
 }
 
 

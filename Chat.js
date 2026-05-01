@@ -1,5 +1,52 @@
+const themes = [
+    { 
+        bg: "url(media/images/wallpaper1.jpg)",
+        hg: "rgb(13, 15, 43)",
+        botColor: "rgb(131, 50, 88)",
+        userColor:"rgb(32, 56, 104)"
+     },
+
+     { 
+        bg: "url(media/images/wallpaper2.jpg)",
+        hg: "rgb(13, 15, 43)",
+        botColor: "rgb(70, 125, 184)",
+        userColor: "rgb(32, 56, 104)"
+     },
+
+     { 
+        bg: "url(media/images/wallpaper3.jpg)",
+        hg: "rgb(13, 15, 43)",
+        botColor: "rgb(70, 125, 184)",
+        userColor: "rgb(32, 56, 104)"
+     },
+
+     { 
+        bg: "url(media/images/wallpaper4.jpg)",
+        hg: "rgb(13, 15, 43)",
+        botColor: "rgb(70, 125, 184)",
+        userColor: "rgb(32, 56, 104)"
+     },
+
+     { 
+        bg: "url(media/images/wallpaper5.jpg)",
+        hg: "rgb(13, 15, 43)",
+        botColor: "rgb(70, 125, 184)",
+        userColor: "rgb(32, 56, 104)"
+     },
+
+     { 
+        bg: "url(media/images/wallpaper6.jpg)",
+        hg: "rgb(36, 151, 196)",
+        botColor: "rgb(70, 125, 184)",
+        userColor: "rgb(0, 70, 161)"
+     },
+]
+
+
 window.onload = function() {
-    
+
+    document.getElementById("chat-bg-box").style.backgroundImage = themes[0].bg
+
     document.getElementById("UserTextInput").addEventListener("keypress", function (event) {
         if (event.keyCode == 13) 
         {
@@ -44,13 +91,21 @@ function PrintQuestion()
     scroll()
 }
 
-let color = "p"
+let currentTheme = 0
 BotColor = "BotPurpleMessage"
 UserColor = "UserPurpleMessage"
 
+
+
 function ChangeTheme()
 {
-    if (color == "p")
+    currentTheme = (currentTheme+1) % themes.length
+    document.getElementById("chat-bg-box").style.backgroundImage = themes[currentTheme].bg
+    document.documentElement.style.setProperty('--bot-color', themes[currentTheme].botColor)
+    document.documentElement.style.setProperty('--user-color', themes[currentTheme].userColor)
+    document.documentElement.style.setProperty('--header-color', themes[currentTheme].hg)
+
+    /*if (color == "p")
     {
         BotColor = "BotBlueMessage"
         UserColor = "UserBlueMessage"
@@ -81,6 +136,7 @@ function ChangeTheme()
         UserColor = "UserPurpleMessage"
 
         document.getElementById("chat-bg-box").style.backgroundImage="linear-gradient(rgb(51, 7, 60), rgb(2, 4, 40))";
+        /*document.getElementById("chat-bg-box").style.backgroundImage=url(media/images/wallpaper2.jpg)*
         document.getElementById("Heading").style.backgroundColor= "rgb(60, 20, 84)";
         document.getElementById("text-input-box-background").style.backgroundColor= "rgb(60, 20, 84)";
         
@@ -100,7 +156,8 @@ function ChangeTheme()
 
         color = "p"
         return
-    }
+
+    }*/
 }
 
 

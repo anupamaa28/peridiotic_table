@@ -186,7 +186,7 @@ const elements = [
     {number: 46, name: "Palladium", symbol: "Pd" },
     {number: 47, name: "Silver", symbol: "Ag" },
     {number: 48, name: "Cadmium", symbol: "Cd" },
-    {number: 49, name: "Indium", symbol: "In" },
+    {number: 49, name: "INdium", symbol: "In" },
     {number: 50, name: "Tin", symbol: "Sn" },
     {number: 51, name: "Antimony", symbol: "Sb" },
     {number: 52, name: "Tellurium", symbol: "Te" },
@@ -214,7 +214,7 @@ const elements = [
     {number: 74, name: "Tungsten", symbol: "W" },
     {number: 75, name: "Rhenium", symbol: "Re" },
     {number: 76, name: "Osmium", symbol: "Os" },
-    {number: 77, name: "Iridium", symbol: "Ir" },
+    {number: 77, name: "IRidium", symbol: "Ir" },
     {number: 78, name: "Platinum", symbol: "Pt" },
     {number: 79, name: "Gold", symbol: "Au" },
     {number: 80, name: "Mercury", symbol: "Hg" },
@@ -254,7 +254,7 @@ const elements = [
     {number: 114, name: "Flerovium", symbol: "Fl" },
     {number: 115, name: "Moscovium", symbol: "Mc" },
     {number: 116, name: "Livermorium", symbol: "Lv" },
-    {number: 117, name: "Tennesine", symbol: "Ts" },
+    {number: 117, name: "Tennessine", symbol: "Ts" },
     {number: 118, name: "Oganesson", symbol: "Og" },
   
 ]

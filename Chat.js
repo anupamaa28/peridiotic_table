@@ -3,7 +3,7 @@ const themes = [
         bg: "url(media/images/wallpaper1.jpg)",
         hg: "rgb(13, 15, 43)",
         botColor: "rgb(131, 50, 88)",
-        userColor:"rgb(32, 56, 104)"
+        userColor:"rgb(118, 86, 141)"
      },
 
      { 
@@ -60,7 +60,7 @@ window.onload = function() {
 function startGame()
 {
     let response = {
-        answer: "Welcome! Test your knowledge of the periodic table!",
+        answer: "Choose your game mode to start game hehe. You can enter element name or symbol",
         buttons: ["Number to Name", "Name to Number", "Next Element"]
     }
     renderBotResponse(response)
@@ -70,6 +70,7 @@ function displayUserMessage(text) {
     let UserMessageText = "<div><p class='UserMessage'><span>" + text + "</span></p></div>"
     document.getElementById("ChatContainer").innerHTML += UserMessageText
     scroll()
+    document.getElementById("UserTextInput").focus()
 }
 
 
@@ -129,6 +130,7 @@ function renderBotResponse(BotReply)
     document.getElementById("ChatContainer").innerHTML += BotResponseText
     PrevHeight = ChatContainer.scrollHeight
     scroll()
+    document.getElementById("UserTextInput").focus()
 }
 
 

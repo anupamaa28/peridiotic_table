@@ -40,14 +40,14 @@ function processInput(text)
             gameState.awaitingTimer = false
             gameState.awaitingTimerDur = true
             return {
-                answer: "How many seconds do you wana have for each question? :)",
-                buttons: ["3", "4", "5"]
+                answer: "How many seconds do you wana have for each question? choose or enter :)",
+                buttons: ["5", "6", "7"]
             }
         }
 
         if (gameState.awaitingTimerDur){
-            if (Number.isNaN(text)){
-                return{answer: "Enter a valid time cutuu :)"}
+            if (isNaN(text)){
+                return{answer: "Enter a valid time :("}
             }
 
             else{
@@ -66,7 +66,7 @@ function processInput(text)
         if (text == "Change Mode") {
             return {
                 answer: "Choose your mode!",
-                buttons: ["Number to Name", "Name to Number", "Next Element", "Mixed"]
+                buttons: ["Number to Name", "Name to Number", "Next Element"]
             }
         }
     }
@@ -75,7 +75,7 @@ function processInput(text)
 
         let correct = false
         if (gameState.mode == "Number to Name") {
-            correct = text.toLowerCase() == gameState.currentQuestion.name.toLowerCase()
+            correct = (text.toLowerCase() == gameState.currentQuestion.name.toLowerCase()) || (text == gameState.currentQuestion.symbol)
             gameState.rightAnswer = gameState.currentQuestion.name
         }
 
@@ -85,7 +85,7 @@ function processInput(text)
         }
 
         if (gameState.mode == "Next Element") {
-            correct = text.toLowerCase() == elements[gameState.currentQuestion.number].name.toLowerCase()
+            correct = (text.toLowerCase() == elements[gameState.currentQuestion.number].name.toLowerCase()) || (text == elements[gameState.currentQuestion.number].symbol)
             gameState.rightAnswer = elements[gameState.currentQuestion.number].name
         }
 
@@ -105,7 +105,7 @@ function endGame(){
     gameState.score = 0
     renderBotResponse({
         answer: "The answer was " + gameState.rightAnswer + ". Your streak was " + finalScore + "!",
-        buttons: ["Play Again", "Change Mode", "na im done"]
+        buttons: ["Play Again", "Change Mode"]
     })
 
 }
